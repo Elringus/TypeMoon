@@ -8,6 +8,12 @@ handlers:
 - url: /
   script: main.app
   secure: optional
+- url: /yandex_7f382d453a4ab357.txt
+  upload: static/yandex_7f382d453a4ab357.txt
+  static_files: static/yandex_7f382d453a4ab357.txt
+- url: /robots.txt
+  upload: static/robots.txt
+  static_files: static/robots.txt
 - url: /stylesheets
   static_dir: stylesheets
 - url: /images
