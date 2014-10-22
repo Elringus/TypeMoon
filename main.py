@@ -1,6 +1,7 @@
 import webapp2
 import jinja2
 import os
+from webapp2 import WSGIApplication, Route
 
 
 JINJA_ENVIRONMENT = jinja2.Environment(
@@ -10,10 +11,14 @@ JINJA_ENVIRONMENT = jinja2.Environment(
 
 
 class MainHandler(webapp2.RequestHandler):
-    def get(self):
+    def get(self, *args, **kwargs):
         template = JINJA_ENVIRONMENT.get_template('templates/main.html')
         self.response.write(template.render())
 
-app = webapp2.WSGIApplication([
-    ('/', MainHandler)
-], debug=True)
+
+routes = [
+    Route(r'/<:.*>', handler=MainHandler)
+]
+
+app = WSGIApplication(routes, debug=False)
+
