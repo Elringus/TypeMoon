@@ -15,16 +15,9 @@ class MainHandler(webapp2.RequestHandler):
         template = JINJA_ENVIRONMENT.get_template('templates/main.html')
         self.response.write(template.render())
 
-<<<<<<< HEAD
-app = webapp2.WSGIApplication([
-    ('/', MainHandler)
-], debug=False)
-=======
 
 routes = [
     Route(r'/<:.*>', handler=MainHandler)
 ]
 
 app = WSGIApplication(routes, debug=False)
-
->>>>>>> origin/master
