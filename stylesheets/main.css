@@ -9,12 +9,47 @@ html {
 div.info-box {
     background-color: rgba(0, 0, 0, 0.5);
     box-shadow: 0 0 10px black;
-    margin: 30px 30px 0 0;
+    position: fixed;
+    top: 30px;
+    right: 30px;
     padding: 0 20px 0 20px;
     float: right;
     width: 380px;
     color: #eaeaea;
     display: none;
+    z-index: 1;
+}
+
+div.banners
+{
+    position: fixed;
+    bottom: 5%;
+    width: 100%;
+    text-align: center;
+    display: none;
+}
+
+@media screen and (max-width: 1180px) {
+    div.banners {
+        display: none !important;
+    }
+}
+
+div.banner-box {
+    background-color: rgba(0, 0, 0, 0.5);
+    box-shadow: 0 0 10px black;
+    color: #eaeaea;
+    padding: 10px 20px 10px 20px;
+    margin: 20px;
+    display: inline-block;
+
+    -webkit-transition: background-color 300ms, box-shadow 300ms;
+    transition: background-color 300ms, box-shadow 300ms;
+}
+
+div.banner-box:hover {
+    background-color: rgba(10, 10, 10, 0.65);
+    box-shadow: 0 0 20px black;
 }
 
 h3 {
@@ -33,11 +68,15 @@ p {
     font-size: 14px;
 }
 
-a {
+a.box-link {
     margin-left: 1px;
     color: #eaeaea;
     font-size: 12px;
     font-family: monospace, sans-serif;
+}
+
+a.banner-link {
+
 }
 
 a:hover {
